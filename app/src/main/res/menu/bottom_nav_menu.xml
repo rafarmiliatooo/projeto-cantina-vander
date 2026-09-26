@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_familia"
+        android:icon="@drawable/ic_home"
+        android:title="@string/nav_familia" />
+    <item
+        android:id="@+id/nav_extrato"
+        android:icon="@drawable/ic_list"
+        android:title="@string/nav_extrato" />
+    <item
+        android:id="@+id/nav_avisos"
+        android:icon="@drawable/ic_notifications"
+        android:title="@string/nav_avisos" />
+</menu>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Item do RecyclerView "recyclerViewExtrato" (activity_child_detail.xml).
+    Cada linha representa um registro vindo de:
+        - pedidos (compras na cantina) -> valor negativo (débito)
+        - vendas_balcao com id_aluno preenchido -> valor negativo (débito)
+        - créditos manuais (lançamento "Crédito adicionado") -> valor positivo (crédito)
+    O ViewHolder deve trocar a cor de tvValorExtrato (verde/vermelho) e o ícone
+    (ivIconeExtrato) conforme o tipo do lançamento.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <FrameLayout
+        android:layout_width="36dp"
+        android:layout_height="36dp"
+        android:background="@drawable/bg_icon_circle_purple">
+
+        <ImageView
+            android:id="@+id/ivIconeExtrato"
+            android:layout_width="18dp"
+            android:layout_height="18dp"
+            android:layout_gravity="center"
+            android:src="@drawable/ic_receipt"
+            android:contentDescription="@null" />
+    </FrameLayout>
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginStart="12dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvDescricaoExtrato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantina • Pedido A184"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tvDataHoraExtrato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="01 set • 09:00"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tvValorExtrato"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="-R$ 18,00"
+        android:textColor="@color/red_negative"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+</LinearLayout>

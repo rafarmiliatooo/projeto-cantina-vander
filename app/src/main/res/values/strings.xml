@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Cantina Escolar</string>
+
+    <!-- Tela 1: Início da família -->
+    <string name="titulo_minha_familia">Minha família</string>
+    <string name="subtitulo_responsavel">Responsável • %1$s</string>
+    <string name="badge_filhos">%1$d FILHOS</string>
+    <string name="consolidado_disponivel_titulo">Consolidado de agosto disponível</string>
+    <string name="consolidado_disponivel_desc">Hoje é dia 1º. Confira a conta do mês anterior e realize o pagamento.</string>
+    <string name="seus_filhos">Seus filhos</string>
+    <string name="ver_todos">Ver todos</string>
+    <string name="cadastrar_vincular_filho">Cadastrar / Vincular filho</string>
+    <string name="atencao_saldo_titulo">Atenção ao saldo de %1$s</string>
+    <string name="atencao_saldo_desc">O valor está abaixo do aviso definido por você.</string>
+
+    <!-- Tela 2: Detalhe do filho -->
+    <string name="saldo_atual">Saldo atual</string>
+    <string name="usado_no_mes">Usado no mês: %1$s</string>
+    <string name="limite_label">Limite: %1$s</string>
+    <string name="adicionar_credito">Adicionar crédito</string>
+    <string name="pagar_conta">Pagar conta</string>
+    <string name="extrato_de_mes">Extrato de %1$s</string>
+
+    <!-- Tela 3: Movimentar saldo -->
+    <string name="movimentar_saldo">Movimentar saldo</string>
+    <string name="valor_do_credito">VALOR DO CRÉDITO</string>
+    <string name="escolha_valor_rapido">Escolha um valor rápido</string>
+    <string name="pagamento">Pagamento</string>
+    <string name="pix_aprovacao">Aprovação imediata</string>
+    <string name="cartao_final">Final %1$s</string>
+    <string name="credito_conta_titulo">Crédito e conta</string>
+    <string name="credito_conta_desc">O saldo é atualizado após a confirmação. Pagamentos também aparecem no extrato.</string>
+    <string name="btn_adicionar_valor">Adicionar %1$s</string>
+
+    <!-- Tela 4: Consolidado mensal -->
+    <string name="consolidado_mensal">Consolidado mensal</string>
+    <string name="status_fechado">FECHADO</string>
+    <string name="status_pendente">PENDENTE</string>
+    <string name="resumo_liberado_titulo">Resumo liberado no dia 1º</string>
+    <string name="resumo_liberado_desc">Este consolidado reúne todas as compras de %1$s.</string>
+    <string name="total_filho_mes">Total do filho em %1$s</string>
+    <string name="vence_em">Vence em %1$s</string>
+    <string name="categorias">Categorias</string>
+    <string name="pagar_conta_mes">Pagar conta de %1$s</string>
+
+    <!-- Tela 5: Vincular filho -->
+    <string name="vincular_filho">Vincular filho</string>
+    <string name="conta_do_responsavel">Conta do responsável</string>
+    <string name="adicionar_a_familia">Adicionar à sua família</string>
+    <string name="adicionar_a_familia_desc">Use os dados cadastrados pela escola para vincular o aluno.</string>
+    <string name="nome_completo_filho">NOME COMPLETO DO FILHO</string>
+    <string name="cpf_do_filho">CPF DO FILHO</string>
+    <string name="senha_fornecida_escola">SENHA FORNECIDA PELA ESCOLA</string>
+    <string name="nao_tem_senha">Não tem a senha? <u>Solicite à secretaria.</u></string>
+
+    <!-- Tela 6: Central de avisos -->
+    <string name="central_de_avisos">Central de avisos</string>
+    <string name="avisos_para_voce">%1$d avisos para você</string>
+    <string name="badge_novos">%1$d NOVOS</string>
+    <string name="hoje">Hoje</string>
+    <string name="anteriores">Anteriores</string>
+    <string name="marcar_como_lidos">Marcar como lidos</string>
+    <string name="filtro_todos">Todos</string>
+    <string name="filtro_saldo">Saldo</string>
+    <string name="filtro_limite">Limite</string>
+    <string name="filtro_conta">Conta</string>
+    <string name="voce_controla_alertas_titulo">Você controla os alertas</string>
+    <string name="voce_controla_alertas_desc">Ajuste valores de saldo baixo e limite no perfil de cada filho.</string>
+
+    <!-- Bottom nav -->
+    <string name="nav_familia">Família</string>
+    <string name="nav_extrato">Extrato</string>
+    <string name="nav_avisos">Avisos</string>
+</resources>

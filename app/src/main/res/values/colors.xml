@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="background">#F2F1EE</color>
+    <color name="white">#FFFFFF</color>
+    <color name="black">#1B1B1B</color>
+
+    <color name="text_primary">#1E1E1E</color>
+    <color name="text_secondary">#8A8A8E</color>
+    <color name="text_hint">#B0B0B3</color>
+    <color name="divider">#E9E8E6</color>
+
+    <color name="primary">#6E44A5</color>
+    <color name="primary_dark">#5A3689</color>
+    <color name="primary_light">#8C63BF</color>
+    <color name="purple_bg_soft">#F2ECFA</color>
+    <color name="purple_bg_softer">#F6F1FC</color>
+
+    <color name="badge_green">#1F8A6E</color>
+    <color name="badge_green_bg">#E4F3EF</color>
+
+    <color name="red_negative">#D6483F</color>
+    <color name="green_positive">#3C9A5C</color>
+    <color name="yellow_bg">#FBF0D2</color>
+    <color name="yellow_icon">#E3A93C</color>
+    <color name="yellow_text">#8A6A1E</color>
+    <color name="orange_bg">#FCE9DA</color>
+    <color name="orange_icon">#E08A3C</color>
+    <color name="blue_bg">#E4ECFB</color>
+    <color name="blue_icon">#4A78D6</color>
+
+    <color name="chip_selected_bg">#3A2A55</color>
+    <color name="chip_unselected_bg">#F0EEEC</color>
+</resources>
