@@ -9,15 +9,11 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.escola.cantina.R;
 import com.escola.cantina.model.Aviso;
 
 import java.util.List;
 
-/**
- * Alimenta o RecyclerView "recyclerViewAvisosHoje" da Tela 6
- * (activity_notifications_center.xml) usando item_aviso_hoje.xml.
- * A cor/ícone do card muda conforme Aviso.Tipo (SALDO_BAIXO, LIMITE, CONTA).
- */
 public class AvisoHojeAdapter extends RecyclerView.Adapter<AvisoHojeAdapter.AvisoViewHolder> {
 
     private final List<Aviso> avisos;
@@ -32,7 +28,7 @@ public class AvisoHojeAdapter extends RecyclerView.Adapter<AvisoHojeAdapter.Avis
     @Override
     public AvisoViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
         View view = LayoutInflater.from(parent.getContext())
-                .inflate(R.layout.test_list_item, parent, false);
+                .inflate(R.layout.item_aviso_hoje, parent, false);
         return new AvisoViewHolder(view);
     }
 

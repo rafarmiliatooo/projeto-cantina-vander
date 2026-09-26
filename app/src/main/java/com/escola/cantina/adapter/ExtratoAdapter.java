@@ -16,11 +16,6 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Alimenta o RecyclerView "recyclerViewExtrato" da Tela 2 (activity_child_detail.xml)
- * usando o layout item_extrato.xml. Débitos aparecem em vermelho com sinal "-",
- * créditos em verde com sinal "+".
- */
 public class ExtratoAdapter extends RecyclerView.Adapter<ExtratoAdapter.ExtratoViewHolder> {
 
     private final List<ExtratoItem> itens;

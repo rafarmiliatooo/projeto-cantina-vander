@@ -18,24 +18,15 @@ import java.util.Locale;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
-/**
- * ATENÇÃO: esta implementação conecta direto no MySQL usando JDBC.
- * É útil para testar os RecyclerViews rapidamente em um protótipo, mas
- * NÃO é recomendada em produção (exporia usuário/senha do banco dentro do
- * APK e não funciona bem em rede móvel/instável). O ideal é publicar uma
- * API REST (Node, Spring Boot, PHP etc.) na frente do MySQL e trocar esta
- * classe por uma implementação com Retrofit chamando essa API.
- *
- * Requer no build.gradle:
- *   implementation 'com.mysql:mysql-connector-j:8.3.0'
- * E permissão de internet no AndroidManifest:
- *   <uses-permission android:name="android.permission.INTERNET" />
- */
 public class CantinaRepositoryJdbcImpl implements CantinaRepository {
 
-    private static final String URL = "jdbc:mysql://SEU_HOST:3306/cantina_escolar_vanders";
-    private static final String USER = "SEU_USUARIO";
-    private static final String PASS = "SUA_SENHA";
+    private static final String HOST = "10.0.2.2"; // Use 10.0.2.2 para o emulador do Android Studio
+    private static final String PORT = "3306";
+    private static final String DATABASE = "cantina_escolar_vanders";
+
+    private static final String URL = "jdbc:mysql://" + HOST + ":" + PORT + "/" + DATABASE + "?useSSL=false&allowPublicKeyRetrieval=true";
+    private static final String USER = "root"; // Coloque o seu usuário do MySQL aqui
+    private static final String PASS = "sua_senha_aqui"; // Coloque a sua senha do MySQL aqui
 
     private final ExecutorService executor = Executors.newSingleThreadExecutor();
     private final Handler mainHandler = new Handler(Looper.getMainLooper());
@@ -175,26 +166,31 @@ public class CantinaRepositoryJdbcImpl implements CantinaRepository {
     }
 
     @Override
-    public void vincularFilho(int idResponsavel, String nomeFilho, String cpfFilho, String senhaEscola,
-                               RepositoryCallback<Boolean> callback) {
+    public void vincularFilho(int idResponsavel, String nomeFilho, String cpfFilho, String senhaAluno,
+                              RepositoryCallback<Boolean> callback) {
         executor.execute(() -> {
             try (Connection conn = abrirConexao()) {
-                PreparedStatement busca = conn.prepareStatement(
-                        "SELECT id FROM usuarios WHERE nome = ? AND cpf = ? AND senha = ? AND status_perfil = 2");
+                // Busca o aluno com base no nome, CPF e na SENHA CADASTRADA POR ELE (status_perfil = 2 -> perfil Aluno)
+                String sqlBusca = "SELECT id FROM usuarios WHERE nome = ? AND cpf = ? AND senha = ? AND status_perfil = 2";
+                PreparedStatement busca = conn.prepareStatement(sqlBusca);
                 busca.setString(1, nomeFilho);
                 busca.setString(2, cpfFilho);
-                busca.setString(3, senhaEscola); // TODO: comparar hash, nunca senha em texto puro em produção
+                busca.setString(3, senhaAluno); // Aqui valida a senha criada pelo aluno
                 ResultSet rs = busca.executeQuery();
 
                 if (rs.next()) {
                     int idAluno = rs.getInt("id");
-                    PreparedStatement vincula = conn.prepareStatement(
-                            "INSERT INTO aluno_responsavel (id_responsavel, id_aluno) VALUES (?, ?)");
+
+                    // Insere o vínculo entre o responsável e o aluno
+                    String sqlVinculo = "INSERT INTO aluno_responsavel (id_responsavel, id_aluno) VALUES (?, ?)";
+                    PreparedStatement vincula = conn.prepareStatement(sqlVinculo);
                     vincula.setInt(1, idResponsavel);
                     vincula.setInt(2, idAluno);
                     vincula.executeUpdate();
+
                     postSuccess(callback, true);
                 } else {
+                    // Aluno não encontrado ou credenciais incorretas
                     postSuccess(callback, false);
                 }
             } catch (Exception e) {

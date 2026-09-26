@@ -72,4 +72,70 @@
     <string name="nav_familia">Família</string>
     <string name="nav_extrato">Extrato</string>
     <string name="nav_avisos">Avisos</string>
+
+    <!-- Home -->
+
+
+    <string name="ola_aluno">Olá, %1$s!</string>
+
+    <string name="saldo_disponivel">Saldo disponível</string>
+
+    <string name="limite_diario_label">Limite diário restante</string>
+
+    <string name="btn_fazer_pedido">Fazer pedido</string>
+
+    <string name="btn_ver_extrato">Ver extrato</string>
+
+    <!-- Extrato -->
+
+
+    <string name="titulo_extrato">Meu extrato</string>
+
+    <!-- Cardápio -->
+
+
+    <string name="titulo_cardapio">Cardápio</string>
+
+    <string name="hint_buscar_produto">Buscar lanche…</string>
+
+    <!-- Personalizar pedido -->
+
+
+    <string name="titulo_personalizar">Personalize o pedido</string>
+
+    <string name="horario_retirada_label">Horário de retirada</string>
+
+    <string name="horario_0900">09:00</string>
+
+    <string name="horario_1530">15:30</string>
+
+    <string name="alergia_label">Alergias e restrições (opcional)</string>
+
+    <string name="hint_alergia">Ex: Alergia a amendoim, lactose…</string>
+
+    <string name="btn_revisar_pedido">Revisar pedido</string>
+
+    <string name="alerta_limite">Este pedido ultrapassa seu limite diário</string>
+
+    <!-- Revisar pedido -->
+
+
+    <string name="titulo_revisar">Revise seu pedido</string>
+
+    <string name="subtotal_label">Subtotal</string>
+
+    <string name="total_label">Total</string>
+
+    <string name="btn_confirmar_pedido">Confirmar pedido</string>
+
+    <!-- Confirmação -->
+
+
+    <string name="titulo_confirmado">Pedido confirmado!</string>
+
+    <string name="codigo_retirada_label">Código de retirada</string>
+
+    <string name="instrucao_retirada">Mostre este código na cantina no horário do seu intervalo</string>
+
+    <string name="btn_voltar_inicio">Voltar para o início</string>
 </resources>

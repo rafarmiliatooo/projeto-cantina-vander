@@ -17,11 +17,6 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Alimenta o RecyclerView "recyclerViewFilhos" da Tela 1 (activity_family_home.xml)
- * usando o layout item_filho.xml. Cada clique abre a Tela 2 (ChildDetailActivity)
- * passando o id do aluno.
- */
 public class FilhoAdapter extends RecyclerView.Adapter<FilhoAdapter.FilhoViewHolder> {
 
     private final List<Filho> filhos;
@@ -84,7 +79,6 @@ public class FilhoAdapter extends RecyclerView.Adapter<FilhoAdapter.FilhoViewHol
 
         FilhoViewHolder(@NonNull View itemView) {
             super(itemView);
-            avatarBg = itemView.findViewById(R.id.frameAvatarFilho);
             tvIniciaisFilho = itemView.findViewById(R.id.tvIniciaisFilho);
             tvNomeFilho = itemView.findViewById(R.id.tvNomeFilho);
             tvTurmaSaldo = itemView.findViewById(R.id.tvTurmaSaldo);

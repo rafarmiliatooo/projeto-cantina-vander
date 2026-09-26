@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Item usado no RecyclerView rv_resultados_aluno (activity_identificar_aluno.xml).
+    Vem da tabela usuarios (WHERE status_perfil = 2, filtrado por nome ou cpf).
+
+    IDs:
+      tv_nome_aluno   -> usuarios.nome
+      tv_turma_cpf    -> usuarios.turma + CPF mascarado, ex: "7º ano B • CPF •••.481-••"
+      tv_valor_saldo  -> saldo disponível (verde, ex: "R$ 42,50") ou débito/estouro de limite
+                          (vermelho, ex: "-R$ 32,00"), calculado a partir de
+                          usuarios.saldo / usuarios.limite_fiado no código Java
+    O root inteiro é clicável e seleciona o aluno para a venda (usuarios.id).
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_item_aluno"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="?attr/selectableItemBackground"
+    android:clickable="true"
+    android:focusable="true"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:layout_width="34dp"
+        android:layout_height="34dp"
+        android:background="@drawable/bg_avatar_circle"
+        android:padding="7dp"
+        android:src="@drawable/ic_person"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_nome_aluno"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Mateus Costa"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_turma_cpf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="7º ano B • CPF •••.481-••"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_valor_saldo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 42,50"
+        android:textColor="@color/green_success_text"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

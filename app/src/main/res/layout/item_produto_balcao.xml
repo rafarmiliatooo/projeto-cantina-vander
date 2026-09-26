@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Item usado no RecyclerView rv_produtos_balcao (activity_venda_balcao.xml).
+    Vem da tabela produtos (id, nome, preco, categoria).
+    Cada toque no item (ou no botão tv_botao_add) incrementa a quantidade no carrinho
+    (em memória, dentro da Activity/Adapter) e gera uma linha em itens_venda_balcao
+    somente quando a venda for confirmada.
+
+    Estados controlados pelo adapter:
+      - quantidade == 0 -> background @drawable/bg_card_rounded, tv_subtitulo_produto = "Toque para adicionar",
+        tv_botao_add mostra ícone "+" (@drawable/ic_plus)
+      - quantidade > 0  -> background @drawable/bg_item_produto_carrinho, tv_subtitulo_produto = "{quantidade} no carrinho",
+        tv_botao_add mostra o número da quantidade
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root_item_produto_balcao"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="10dp"
+    android:background="@drawable/bg_card_rounded"
+    android:clickable="true"
+    android:focusable="true"
+    android:foreground="?attr/selectableItemBackground"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingStart="14dp"
+    android:paddingEnd="14dp"
+    android:paddingTop="12dp"
+    android:paddingBottom="12dp">
+
+    <ImageView
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:background="@drawable/bg_avatar_circle"
+        android:padding="9dp"
+        android:src="@drawable/ic_produto_generico"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_nome_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Pão de queijo"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_subtitulo_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="Toque para adicionar"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_preco_produto"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="14dp"
+        android:text="R$ 7,50"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/tv_botao_add"
+        android:layout_width="28dp"
+        android:layout_height="28dp"
+        android:background="@drawable/bg_botao_add_circulo"
+        android:clickable="true"
+        android:focusable="true"
+        android:gravity="center"
+        android:text="+"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Activity Java correspondente: PersonalizarPedidoActivity.java
+  IDs a vincular:
+    btnVoltarPersonalizar -> finish()
+    chipHorario0900 / chipHorario1530 -> define pedidos.intervalo ("09:00" / "15:30")
+    etAlergia          -> pedidos.alergia (observação de restrição alimentar)
+    rvItensPersonalizar -> RecyclerView somente leitura dos itens escolhidos no cardápio
+                           (item_pedido_resumo.xml)
+    tvTotalPersonalizar -> soma de itens_pedido (quantidade * preco_unitario) = pedidos.valor_total
+    layoutAlertaLimite  -> visibilidade GONE/VISIBLE conforme valor_total > limite_diario restante
+    btnRevisarPedido    -> valida limite e abre RevisarPedidoActivity
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <!-- Topbar -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:padding="16dp">
+
+            <ImageButton
+                android:id="@+id/btnVoltarPersonalizar"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Voltar"
+                android:src="@android:drawable/ic_menu_revert"/>
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:text="@string/titulo_personalizar"
+                android:textColor="@color/text_dark"
+                android:textSize="18sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="40dp"
+                android:layout_height="40dp"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <!-- Horário de retirada -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/horario_retirada_label"
+                android:textColor="@color/text_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/chipHorario0900"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="8dp"
+                    android:background="@drawable/bg_chip_selected"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/horario_0900"
+                    android:textColor="@color/white"
+                    android:textStyle="bold"/>
+
+                <TextView
+                    android:id="@+id/chipHorario1530"
+                    android:layout_width="0dp"
+                    android:layout_height="48dp"
+                    android:layout_weight="1"
+                    android:layout_marginStart="8dp"
+                    android:background="@drawable/bg_chip_unselected"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:gravity="center"
+                    android:text="@string/horario_1530"
+                    android:textColor="@color/text_gray"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Campo de alergia -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="@string/alergia_label"
+                android:textColor="@color/text_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/etAlergia"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/bg_card_white"
+                android:gravity="top|start"
+                android:hint="@string/hint_alergia"
+                android:inputType="textMultiLine"
+                android:minLines="3"
+                android:padding="14dp"
+                android:textColor="@color/text_dark"
+                android:textColorHint="@color/text_gray_light"
+                android:textSize="14sp"/>
+
+            <!-- Resumo do pedido -->
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="24dp"
+                android:text="Itens do pedido"
+                android:textColor="@color/text_dark"
+                android:textSize="15sp"
+                android:textStyle="bold"/>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvItensPersonalizar"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:nestedScrollingEnabled="false"
+                tools:listitem="@layout/item_pedido_resumo"/>
+
+            <!-- Alerta de limite -->
+            <LinearLayout
+                android:id="@+id/layoutAlertaLimite"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/bg_alert_orange"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:padding="14dp"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:contentDescription="Alerta"
+                    android:src="@android:drawable/ic_dialog_alert"
+                    app:tint="@color/orange_alert"
+                    xmlns:app="http://schemas.android.com/apk/res-auto"/>
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:layout_marginStart="10dp"
+                    android:text="@string/alerta_limite"
+                    android:textColor="@color/orange_alert"
+                    android:textSize="13sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <!-- Total -->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:gravity="center_vertical"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/total_label"
+                    android:textColor="@color/text_gray"
+                    android:textSize="15sp"/>
+
+                <TextView
+                    android:id="@+id/tvTotalPersonalizar"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$ 70,50"
+                    android:textColor="@color/text_dark"
+                    android:textSize="20sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnRevisarPedido"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_button_green"
+                android:text="@string/btn_revisar_pedido"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textSize="16sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</ScrollView>

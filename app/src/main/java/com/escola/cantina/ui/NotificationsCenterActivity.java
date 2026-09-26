@@ -12,7 +12,6 @@ import com.escola.cantina.R;
 import com.escola.cantina.adapter.AvisoAnteriorAdapter;
 import com.escola.cantina.adapter.AvisoHojeAdapter;
 import com.escola.cantina.model.Aviso;
-import com.escola.cantina.model.Filho;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.chip.ChipGroup;
 

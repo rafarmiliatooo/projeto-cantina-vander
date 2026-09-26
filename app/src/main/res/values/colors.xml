@@ -30,4 +30,79 @@
 
     <color name="chip_selected_bg">#3A2A55</color>
     <color name="chip_unselected_bg">#F0EEEC</color>
+
+    <color name="green_primary">#00A859</color>
+
+    <color name="green_primary_dark">#00874A</color>
+
+    <color name="green_light_bg">#E7F6EC</color>
+
+    <color name="green_soft">#D3F0DD</color>
+
+    <!-- Alerta / atenção (limite, alergia) -->
+
+
+    <color name="orange_alert">#FF8A00</color>
+
+    <color name="orange_alert_bg">#FFF1DC</color>
+
+    <!-- Vermelho (débito / cancelado) -->
+
+
+    <color name="red_debit">#E53935</color>
+
+    <!-- Neutros -->
+
+    <color name="card_bg">#FFFFFF</color>
+
+    <color name="text_dark">#1B1F1C</color>
+
+    <color name="text_gray">#7A8079</color>
+
+    <color name="text_gray_light">#B0B5AF</color>
+    <color name="teal_900">#134E4A</color>
+
+    <color name="teal_700">#0F5C56</color>
+
+    <color name="teal_600">#146B63</color>
+
+    <color name="background_app">#F4F6F5</color>
+
+    <color name="card_background">#FFFFFF</color>
+
+    <color name="card_stroke">#E3E7E5</color>
+
+    <color name="text_primary">#1C2621</color>
+
+    <color name="text_secondary">#6B7873</color>
+
+    <color name="text_hint">#98A29D</color>
+
+    <color name="divider">#EAEEEC</color>
+
+    <color name="green_success_bg">#E3F5EA</color>
+
+    <color name="green_success_text">#1E8E4F</color>
+
+    <color name="orange_warning_bg">#FDEFD9</color>
+
+    <color name="orange_warning_text">#B9740A</color>
+
+    <color name="red_alert_bg">#FBE4E4</color>
+
+    <color name="red_alert_text">#C4362E</color>
+
+    <color name="teal_chip_selected">#0F5C56</color>
+
+    <color name="warning_card_bg">#FDF3DC</color>
+
+    <color name="warning_card_stroke">#F2DFA6</color>
+
+    <color name="warning_card_text">#7A5B0A</color>
+
+    <color name="dark_bar_bg">#12211D</color>
+
+    <color name="teal_light_bg">#E1F1EF</color>
+
+    <color name="chip_dark_bg">#16221F</color>
 </resources>

@@ -3,11 +3,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.cantina_aplicacao"
+    namespace = "com.escola.cantina"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.cantina_aplicacao"
+        applicationId = "com.escola.cantina"
         minSdk = 24
         targetSdk = 34
         versionCode = 1
@@ -33,6 +33,8 @@ android {
 
 dependencies {
 
+    // MySQL Connector Java
+    implementation("mysql:mysql-connector-java:8.0.33")
     implementation(libs.appcompat)
     implementation(libs.material)
     implementation(libs.activity)

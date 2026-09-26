@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Activity Java correspondente: PedidoConfirmadoActivity.java
+  IDs a vincular:
+    tvCodigoRetirada   -> pedidos.codigo_retirada (recebido via Intent extra)
+    ivQrCode           -> gerar bitmap do QR (ex.: biblioteca ZXing) codificando codigo_retirada
+    tvHorarioConfirmado-> pedidos.intervalo
+    tvValorConfirmado  -> pedidos.valor_total
+    btnVoltarInicio    -> volta para HomeActivity (limpa a back stack do fluxo de pedido)
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background"
+    android:padding="24dp"
+    android:gravity="center_horizontal">
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="0.3"/>
+
+    <!-- Selo de sucesso -->
+    <FrameLayout
+        android:layout_width="72dp"
+        android:layout_height="72dp">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/bg_circle_check"/>
+
+        <ImageView
+            android:layout_width="32dp"
+            android:layout_height="32dp"
+            android:layout_gravity="center"
+            android:contentDescription="Confirmado"
+            android:src="@android:drawable/checkbox_on_background"
+            app:tint="@color/white"
+            xmlns:app="http://schemas.android.com/apk/res-auto"/>
+    </FrameLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/titulo_confirmado"
+        android:textColor="@color/text_dark"
+        android:textSize="20sp"
+        android:textStyle="bold"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="6dp"
+        android:gravity="center"
+        android:text="@string/instrucao_retirada"
+        android:textColor="@color/text_gray"
+        android:textSize="14sp"/>
+
+    <!-- Caixa do código / QR -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:background="@drawable/bg_qrcode_box"
+        android:gravity="center"
+        android:orientation="vertical"
+        android:padding="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/codigo_retirada_label"
+            android:textColor="@color/text_gray"
+            android:textSize="12sp"/>
+
+        <TextView
+            android:id="@+id/tvCodigoRetirada"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:letterSpacing="0.15"
+            android:text="R70.6"
+            android:textColor="@color/green_primary_dark"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <!-- Detalhes do pedido -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/bg_card_white"
+        android:orientation="vertical"
+        android:padding="16dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Horário"
+                android:textColor="@color/text_gray"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tvHorarioConfirmado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="09:00"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Valor pago"
+                android:textColor="@color/text_gray"
+                android:textSize="13sp"/>
+
+            <TextView
+                android:id="@+id/tvValorConfirmado"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="R$ 70,50"
+                android:textColor="@color/text_dark"
+                android:textStyle="bold"/>
+        </LinearLayout>
+    </LinearLayout>
+
+    <View
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <Button
+        android:id="@+id/btnVoltarInicio"
+        android:layout_width="match_parent"
+        android:layout_height="52dp"
+        android:background="@drawable/bg_button_green"
+        android:text="@string/btn_voltar_inicio"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="16sp"
+        android:textStyle="bold"/>
+
+</LinearLayout>

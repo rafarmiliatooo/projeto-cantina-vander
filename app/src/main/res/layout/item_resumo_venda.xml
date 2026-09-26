@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Item usado no RecyclerView rv_itens_comprovante (activity_venda_concluida.xml)
+    e pode ser reaproveitado em qualquer outro resumo de carrinho/comprovante.
+    Vem de itens_venda_balcao JOIN produtos.
+
+    IDs:
+      tv_qtd_nome_produto -> "2× Pão de queijo" (itens_venda_balcao.quantidade + produtos.nome)
+      tv_detalhe_produto  -> ex: "R$ 7,50 cada" (itens_venda_balcao.preco_unitario formatado)
+      tv_valor_linha      -> quantidade * preco_unitario formatado em R$
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp">
+
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:background="@drawable/bg_avatar_circle"
+        android:padding="6dp"
+        android:src="@drawable/ic_produto_generico"
+        android:contentDescription="@null" />
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_weight="1"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_qtd_nome_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2× Pão de queijo"
+            android:textColor="@color/text_primary"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/tv_detalhe_produto"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:text="R$ 7,50 cada"
+            android:textColor="@color/text_secondary"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/tv_valor_linha"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="R$ 15,00"
+        android:textColor="@color/text_primary"
+        android:textSize="14sp"
+        android:textStyle="bold" />
+
+</LinearLayout>

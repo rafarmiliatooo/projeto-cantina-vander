@@ -15,10 +15,6 @@ import java.text.NumberFormat;
 import java.util.List;
 import java.util.Locale;
 
-/**
- * Alimenta o RecyclerView "recyclerViewCategorias" da Tela 4
- * (activity_monthly_statement.xml) usando o layout item_categoria.xml.
- */
 public class CategoriaAdapter extends RecyclerView.Adapter<CategoriaAdapter.CategoriaViewHolder> {
 
     private final List<Categoria> categorias;

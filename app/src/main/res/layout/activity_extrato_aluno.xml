@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Activity Java correspondente: ExtratoActivity.java
+  IDs a vincular:
+    btnVoltarExtrato   -> finish() / onBackPressed()
+    tvSaldoExtrato     -> usuarios.saldo
+    rvExtrato          -> RecyclerView adaptado com ExtratoAdapter (item_extrato.xml)
+                          Fonte de dados: união de pedidos + vendas_balcao do aluno logado,
+                          ordenado por data desc.
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/background">
+
+    <!-- Topbar -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/btnVoltarExtrato"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:background="@android:color/transparent"
+            android:contentDescription="Voltar"
+            android:src="@android:drawable/ic_menu_revert"/>
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:text="@string/titulo_extrato"
+            android:textColor="@color/text_dark"
+            android:textSize="18sp"
+            android:textStyle="bold"/>
+
+        <View
+            android:layout_width="40dp"
+            android:layout_height="40dp"/>
+    </LinearLayout>
+
+    <!-- Card de saldo resumido -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/bg_card_green"
+        android:padding="20dp"
+        android:layout_marginHorizontal="16dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/saldo_disponivel"
+            android:textColor="@color/green_primary_dark"
+            android:textSize="13sp"/>
+
+        <TextView
+            android:id="@+id/tvSaldoExtrato"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:text="R$ 24,50"
+            android:textColor="@color/text_dark"
+            android:textSize="28sp"
+            android:textStyle="bold"/>
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="16dp"
+        android:text="Movimentações"
+        android:textColor="@color/text_gray"
+        android:textSize="13sp"
+        android:textStyle="bold"/>
+
+    <!-- Lista de transações -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rvExtrato"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="8dp"
+        android:clipToPadding="false"
+        android:paddingBottom="12dp"
+        tools:listitem="@layout/item_extrato"
+        xmlns:tools="http://schemas.android.com/tools"/>
+
+</LinearLayout>

@@ -1,9 +1,5 @@
 package com.escola.cantina.model;
 
-/**
- * Representa uma linha de "usuarios" (status_perfil = 2) já filtrada pelo
- * vínculo em "aluno_responsavel". Usado no RecyclerView da Tela 1 (item_filho.xml).
- */
 public class Filho {
     private int id;              // usuarios.id
     private String nome;         // usuarios.nome

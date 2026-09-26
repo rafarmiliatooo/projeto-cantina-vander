@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Activity Java correspondente: HomeActivity.java
+  IDs a vincular:
+    tvSaudacaoAluno   -> nome do aluno logado (usuarios.nome)
+    tvSaldoAtual      -> usuarios.saldo formatado em R$
+    tvLimiteRestante  -> usuarios.limite_diario - total já gasto no dia
+    btnFazerPedido    -> abre CardapioActivity (início do fluxo de pedido)
+    btnVerExtrato     -> abre ExtratoActivity
+-->
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/background"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:padding="20dp">
+
+        <!-- Cabeçalho -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_marginTop="12dp">
+
+            <View
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:background="@drawable/bg_circle_check"/>
+
+            <TextView
+                android:id="@+id/tvSaudacaoAluno"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:layout_marginStart="12dp"
+                android:text="Olá, Lucas!"
+                android:textColor="@color/text_dark"
+                android:textSize="20sp"
+                android:textStyle="bold"/>
+
+            <ImageButton
+                android:id="@+id/btnNotificacoes"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:background="@android:color/transparent"
+                android:contentDescription="Notificações"
+                android:src="@android:drawable/ic_dialog_email"/>
+        </LinearLayout>
+
+        <!-- Card de saldo -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:background="@drawable/bg_card_green"
+            android:padding="24dp"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/saldo_disponivel"
+                android:textColor="@color/green_primary_dark"
+                android:textSize="14sp"/>
+
+            <TextView
+                android:id="@+id/tvSaldoAtual"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="6dp"
+                android:text="R$ 42,50"
+                android:textColor="@color/text_dark"
+                android:textSize="36sp"
+                android:textStyle="bold"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginVertical="16dp"
+                android:background="@color/green_soft"/>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="@string/limite_diario_label"
+                    android:textColor="@color/text_gray"
+                    android:textSize="13sp"/>
+
+                <TextView
+                    android:id="@+id/tvLimiteRestante"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="R$ 15,00"
+                    android:textColor="@color/green_primary_dark"
+                    android:textSize="15sp"
+                    android:textStyle="bold"/>
+            </LinearLayout>
+        </LinearLayout>
+
+        <!-- Botões de ação -->
+        <Button
+            android:id="@+id/btnFazerPedido"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="28dp"
+            android:background="@drawable/bg_button_green"
+            android:text="@string/btn_fazer_pedido"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+        <Button
+            android:id="@+id/btnVerExtrato"
+            android:layout_width="match_parent"
+            android:layout_height="52dp"
+            android:layout_marginTop="12dp"
+            android:background="@drawable/bg_button_outline"
+            android:text="@string/btn_ver_extrato"
+            android:textAllCaps="false"
+            android:textColor="@color/green_primary_dark"
+            android:textSize="16sp"
+            android:textStyle="bold"/>
+
+    </LinearLayout>
+</ScrollView>

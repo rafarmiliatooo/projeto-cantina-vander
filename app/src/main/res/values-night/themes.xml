@@ -1,7 +1,10 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Cantina_aplicacao" parent="Theme.Material3.DayNight.NoActionBar">
+    <style name="Base.Theme.CantinaVander" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
+        parent="Theme.Material3.DayNight.NoActionBar" name="Base.Theme.CantinaVander">
+        <!-- Customize your dark theme here. -->
+        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>
